@@ -40,7 +40,7 @@ about:
   doc_url: https://github.com/std-uritemplate/std-uritemplate/blob/main/Readme.md
 
 extra:
-   anaconda-services:
+  anaconda-services:
     ref: https://anaconda.zendesk.com/agent/tickets/48409
     reason: Dependenccy for microsoft-kiota-abstractions
     recipe-maintainers:
