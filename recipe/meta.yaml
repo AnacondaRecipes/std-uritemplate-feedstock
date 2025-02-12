@@ -1,13 +1,13 @@
 {% set name = "std-uritemplate" %}
-{% set version = "1.0.2" %}
+{% set version = "2.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/std_uritemplate-{{ version }}.tar.gz
-  sha256: 949d980d38d423799ff4987a835eeb5e9a45443dc61a9cc830461d926cf426e4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/std_uritemplate-{{ version }}.tar.gz
+  sha256: ad4cb1d671bcf4a3608b3598c687be4b0929867c53a2d69c105989da6a5a2d4c
 
 build:
   noarch: python
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python
     - poetry-core
     - pip
   run:
-    - python >=3.8.0,<4.0.0
+    - python
 
 test:
   imports:
@@ -28,6 +28,7 @@ test:
   commands:
     - pip check
   requires:
+    - python
     - pip
 
 about:
@@ -40,5 +41,10 @@ about:
   doc_url: https://github.com/std-uritemplate/std-uritemplate/blob/main/Readme.md
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/64252
+    reason: Dependency for msgraph-sdk
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - xylar
